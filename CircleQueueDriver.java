@@ -73,7 +73,8 @@ public class CircleQueueDriver {
 		//add different types of objects to the same opaque queue
 		trial.addCQueue(Animal.animalData());
 		trial.addCQueue(Cupcakes.cupCakeData());
-		trial.addCQueue(Alphabet.alphabetData());		
+		trial.addCQueue(Alphabet.alphabetData());	
+		trial.addCQueue(Cookies.cookieData());
 		//display queue objects in queue order
 		trial.showCQueue();
 		
@@ -81,6 +82,7 @@ public class CircleQueueDriver {
 		Animal.key = Animal.KeyType.name;
 		Cupcakes.key = Cupcakes.KeyType.flavor;
 		Alphabet.key = Alphabet.KeyType.letter;
+		Cookies.key = Cookies.KeyType.dough;
 		trial.cqueue.insertionSort();
 		trial.showCQueue();
 		
@@ -88,6 +90,7 @@ public class CircleQueueDriver {
 		Animal.key = Animal.KeyType.combo;
 		Cupcakes.key = Cupcakes.KeyType.combo;
 		Alphabet.key = Alphabet.KeyType.combo;
+		Cookies.key = Cookies.KeyType.combo;
 		trial.showCQueue();
 		
 		//delete queue objects
