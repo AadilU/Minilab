@@ -1,0 +1,79 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java. util. Scanner;
+public class CircleQueueAL {
+	int icompares = 0; 
+	int iswaps = 0;
+	public void Convert() {
+		ArrayList<Integer>arraylist = new ArrayList<Integer>(); 
+		Scanner scan = new Scanner(System.in);
+		int x = 0; 
+		int y = 0, z = 0;
+		boolean repeat = true;
+		boolean repeat2 = true;
+		int user; 
+		
+		while (repeat == true) 
+		{ 
+			System.out.println("What would you like to do?"); 
+			System.out.println("1. Add"); 
+			System.out.println("2. Remove"); 
+			System.out.println("3. Sort and Print");
+			x = scan.nextInt();
+			switch (x) 
+			{ 
+			case 1: 
+				while (repeat2 == true) 
+				{
+				System.out.println("Enter a Number");
+				user = scan.nextInt();
+				arraylist.add(user); 
+				System.out.println("Want to add another number? (0 for yes, 1 for no)"); 
+				z = scan.nextInt(); 
+				if (z == 0) 
+					repeat2 = true; 
+				else 
+					repeat2 = false;
+				}
+				break; 	
+			case 2: 
+				arraylist.remove(0); 
+				break; 
+			case 3: 
+			     for (int i = 0; i < arraylist.size() - 1; i++) {
+			            
+			            // insertion sort key logic
+			            int k = i + 1;
+			            int swap = arraylist.get(k);            
+			            while( k > 0 && swap < arraylist.get(k-1)) {
+			                arraylist.set(k, arraylist.get(k-1));
+			                k--;
+			                
+			                // analytics
+			                this.icompares++; // compare counter
+			                this.iswaps++; // shift counter
+			            }
+			            arraylist.set(k, swap);
+			            
+			            this.iswaps++;  // increment swap counter
+			            
+			        }
+			        System.out.println(arraylist);
+			        break;
+			   //return arraylist
+		} 
+			System.out.println("Want to use a different mode? 0 for yes, 1 for no");
+			y = scan.nextInt();
+			if (y == 0) 
+				repeat = true; 
+			else 
+				repeat = false;
+		}
+	}
+	public static void main(String args[]) 
+	{ 
+		CircleQueueAL c = new CircleQueueAL(); 
+		c.Convert();
+	}
+}
