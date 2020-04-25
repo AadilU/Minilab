@@ -205,9 +205,44 @@ public class CircleQueue
     } 
     
   } 
-  public void selectionSort() {
-	  //NEED TO BE IMPLEMENTED
+  
+  public LinkedList selectionSort(LinkedList h)
+  {
+	  if(h.getNext() == null)
+		  return h;
+	  
+	  
+	  LinkedList min = h;
+	  LinkedList b = null;
+	  LinkedList p;
+	  
+	  for(p = h;p.getNext() != null; p = p.getNext())
+	  {
+		  if(p.getNext() == min.getObject())
+		  {
+			  min = p.getNext();
+			  b = p;
+		  }
+	  }
+	  
+	  if(min != h)
+		  h = swap(h, h, min, b);
+	  
+	  h.setNextNode(selectionSort(h.getNext()));
+	  
+	  return h;
   }
   
+  public static LinkedList swap(LinkedList h, LinkedList c, LinkedList cu, LinkedList cu1)
+  {
+	  h = cu;
+	  
+	  cu1.setNextNode(c);
+	  
+	  LinkedList t = cu.getNext();
+	  cu.setNextNode(c.getNext());
+	  c.setNextNode(t);
+	  
+	  return h;
+  }
 }
-
