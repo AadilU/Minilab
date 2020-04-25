@@ -119,6 +119,8 @@ public class Sorts
     /**
      * @return
      */
+    
+    //SelectionSort
     private int[] SelectionSort()
     {
     	int minNum;
@@ -138,6 +140,21 @@ public class Sorts
     	}
     	return selectionList;
     }
+    
+    /*Of the three sorts, the best way to compare efficiency would be comparing the best
+     * and worst case scenarios of each sorting algorithm. For bubble sort, the worst case
+     * is n^2 iterations where n is the length of the array. This is because the inside loop might
+     * have to run all the way through everytime the outside loop goes through an iteration.
+     * For insertion sort, the worst case is also n^2 and the best case is also n. Selection sort 
+     * has n^2 as the worst case and n^2 as the best case because the inner loop and outer
+     * loop will always run all the way through regardless of order. This means the selection
+     * sort is not the most efficient way to sort an array. With insertion sort and bubble sort left
+     * we can compare the method each loop uses to sort the array. With bubble sort, the inner
+     * for loop doesn't allow the iterations to be stopped and will always run all the way through
+     * while in insertion sort, the while loop allows it to stop whenever an integer in an element
+     * is less than the integer in the element before it. Insertion sort is the most efficient
+     * of the sorts in this class.
+     * */
 
     /**
      *
