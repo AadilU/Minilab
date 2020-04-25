@@ -13,6 +13,7 @@ public class Sorts
     private int[] list;
     private int[] blist; int bcompares = 0; int bswaps = 0;
     private int[] ilist; int icompares = 0; int iswaps = 0;
+    private int[] selectionList;
 
     /**
      * Constructor for objects of class isort
@@ -28,6 +29,8 @@ public class Sorts
         this.BubbleSort();
         ilist = list.clone();
         this.InsertionSort();
+        selectionList = list.clone();
+        this.SelectionSort();
     }
     
     public String toString() {
@@ -111,6 +114,29 @@ public class Sorts
         }
         
         return ilist;
+    }
+    
+    /**
+     * @return
+     */
+    private int[] SelectionSort()
+    {
+    	int minNum;
+    	for(int i = 0; i < selectionList.length - 1; i++)
+    	{
+    		int t = i;
+    		for(int j = i + 1;j < selectionList.length;j++)
+    		{
+    			if(selectionList[j] < selectionList[t])
+    			{
+    				t = j;
+    			}
+    		}
+    		minNum = selectionList[t];
+    		selectionList[t] = selectionList[i];
+    		selectionList[i] = minNum;
+    	}
+    	return selectionList;
     }
 
     /**
